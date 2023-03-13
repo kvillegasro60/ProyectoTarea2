@@ -1,0 +1,47 @@
+INSERT INTO persona
+VALUES(98321566, "Julian", "Ruiz", 27, "CRA 41 B N° 71 — 48", "Sociologo");
+
+INSERT INTO persona
+VALUES(95542526, "Juan", "Perez", 54, "CLL 23 NORTE N° 3N — 80", "ingeniero de Sistemas");
+
+INSERT INTO persona
+VALUES(97222566, "Omar", "Pertuz", 45, " CLL 15 N° 16 — 47 BRR LA VEGA ", "Físico puro");
+
+INSERT INTO persona
+VALUES(98661566, "Ana", "Ossa", 42, "CRA 32 N° 58 — 41", "Odontologa");      
+                                                          
+INSERT INTO persona
+VALUES(194521566, "Luisa", "Urrego", 28, "CRR 54 N° 26 — 54", "Medica");
+
+
+INSERT INTO usuario
+VALUES(1222255, "Juan", "prueba122", 95542526);
+
+
+INSERT INTO cliente
+VALUES(1, "Sofia", "Uribe", 23, "CRA 76 N° 35 — 36", 98321566);
+
+INSERT INTO cliente
+VALUES(2, "Maria", "Vanegas", 39, "AV SAN MARTÍN N° 13 — 3", 97222566);
+
+INSERT INTO cliente
+VALUES(3, "Emmanuel", "Lopez", 45, " CLL 16 N° 15 — 40 BRR BUGA", 98661566);
+
+INSERT INTO cliente
+VALUES(4, "Samuel", "Cardenas", 33, "CRA 36 N° 57 — 42", 194521566);
+
+
+INSERT INTO solicitud
+VALUES
+(202001, "Clásica", "2020-08-06", "ACTIVA", 1, 98321566),
+(202002, "Oro", "2020-08-06", "ACTIVA", 2, 97222566),
+(202003, "Clásica", "2020-08-06", "ACTIVA", 3, 98661566),
+(202004, "Platino", "2020-08-06", "PENDIENTE", 4, 194521566);
+
+
+INSERT INTO cliente_has_solicitud
+VALUES
+(1, 202001),
+(2, 202002),
+(3, 202003),
+(4, 202004);

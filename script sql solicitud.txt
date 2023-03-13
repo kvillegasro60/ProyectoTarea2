@@ -1,0 +1,49 @@
+CREATE DATABASE solicitudtarjeta;
+
+USE solicitudtarjeta;
+
+CREATE TABLE persona(
+id_persona INT(12) NOT NULL PRIMARY KEY,
+nombre_persona VARCHAR(45) NOT NULL,
+apellido_persona VARCHAR(45) NOT NULL,
+edad_persona INT(2) NOT NULL,
+direccion_persona TEXT (200) NOT NULL,
+profesion_persona VARCHAR(45) NOT NULL
+)ENGINE=INNODB;
+
+CREATE TABLE usuario(
+id_usuario INT(3) NOT NULL PRIMARY KEY,
+nombre_usuario VARCHAR(45) NOT NULL,
+clave_usuario VARCHAR(45) NOT NULL,
+id_persona INT(12) NOT NULL,
+FOREIGN KEY (id_persona) REFERENCES persona(id_persona)
+)ENGINE=INNODB;
+
+CREATE TABLE cliente(
+id_cliente INT(12) NOT NULL PRIMARY KEY,
+nombre_conyugue VARCHAR(45) NOT NULL,
+apellido_conyugue VARCHAR(45) NOT NULL,
+edad_conyugue INT(2) NOT NULL,
+direccion_conyugue TEXT (200) NOT NULL,
+id_persona INT(12) NOT NULL,
+FOREIGN KEY (id_persona) REFERENCES persona(id_persona)
+)ENGINE=INNODB;
+
+CREATE TABLE solicitud(
+id_solicitud INT(4) NOT NULL PRIMARY KEY,
+tipo_tarjeta VARCHAR(45) NOT NULL,
+fecha_solicitud DATE NOT NULL,
+estado_solicitud VARCHAR(15) NOT NULL,
+id_cliente INT(12) NOT NULL,
+id_persona INT(12) NOT NULL,
+FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente),
+FOREIGN KEY (id_persona) REFERENCES persona(id_persona)
+)ENGINE=INNODB;
+
+CREATE TABLE cliente_has_solicitud(
+id_cliente INT(12) NOT NULL,
+id_solicitud INT(4) NOT NULL,
+PRIMARY KEY (id_cliente,id_solicitud),
+FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente),
+FOREIGN KEY (id_solicitud) REFERENCES solicitud(id_solicitud)
+)ENGINE=INNODB;

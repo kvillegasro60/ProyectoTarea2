@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreatePersonaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreatePersonaLabel_idPersona}" for="idPersona" />
+                    <h:inputText id="idPersona" value="#{personaController.selected.idPersona}" title="#{bundle.CreatePersonaTitle_idPersona}" required="true" requiredMessage="#{bundle.CreatePersonaRequiredMessage_idPersona}"/>
+                    <h:outputLabel value="#{bundle.CreatePersonaLabel_nombrePersona}" for="nombrePersona" />
+                    <h:inputText id="nombrePersona" value="#{personaController.selected.nombrePersona}" title="#{bundle.CreatePersonaTitle_nombrePersona}" required="true" requiredMessage="#{bundle.CreatePersonaRequiredMessage_nombrePersona}"/>
+                    <h:outputLabel value="#{bundle.CreatePersonaLabel_apellidoPersona}" for="apellidoPersona" />
+                    <h:inputText id="apellidoPersona" value="#{personaController.selected.apellidoPersona}" title="#{bundle.CreatePersonaTitle_apellidoPersona}" required="true" requiredMessage="#{bundle.CreatePersonaRequiredMessage_apellidoPersona}"/>
+                    <h:outputLabel value="#{bundle.CreatePersonaLabel_edadPersona}" for="edadPersona" />
+                    <h:inputText id="edadPersona" value="#{personaController.selected.edadPersona}" title="#{bundle.CreatePersonaTitle_edadPersona}" required="true" requiredMessage="#{bundle.CreatePersonaRequiredMessage_edadPersona}"/>
+                    <h:outputLabel value="#{bundle.CreatePersonaLabel_direccionPersona}" for="direccionPersona" />
+                    <h:inputTextarea rows="4" cols="30" id="direccionPersona" value="#{personaController.selected.direccionPersona}" title="#{bundle.CreatePersonaTitle_direccionPersona}" required="true" requiredMessage="#{bundle.CreatePersonaRequiredMessage_direccionPersona}"/>
+                    <h:outputLabel value="#{bundle.CreatePersonaLabel_profesionPersona}" for="profesionPersona" />
+                    <h:inputText id="profesionPersona" value="#{personaController.selected.profesionPersona}" title="#{bundle.CreatePersonaTitle_profesionPersona}" required="true" requiredMessage="#{bundle.CreatePersonaRequiredMessage_profesionPersona}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{personaController.create}" value="#{bundle.CreatePersonaSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{personaController.prepareList}" value="#{bundle.CreatePersonaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreatePersonaIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+    <h:body>
+        <div id="title">
+            Bienvenidos al Sistema de Solicitudes de Tarjetas de Crédito
+            <br />
+        </div>
+        <div id="logo">
+            <h:graphicImage library="imagenes" name="logo_uniban.PNG" alt="logo" />
+            
+            <br />
+        </div>
+        <div id="index">
+            <ul>
+                <li> 
+                    <h:link outcome="/cliente/List" value="Listar todos los Clientes"/>
+                </li> 
+                <br></br>
+                <li> 
+                    <h:link outcome="/persona/List" value="Listar todas las Personas"/>
+                </li> 
+                <br></br>
+                <li> 
+                    <h:link outcome="/solicitud/List" value="Listar todas las Solicitudes"/>
+                </li> 
+                <br></br>
+                <li> 
+                    <h:link outcome="/usuario/List" value="Listar todos los Usuarios"/>
+                </li> 
+            </ul>
+            <br />
+        </div>
+    </h:body>
+
+
+
+
+</html>
+
